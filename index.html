@@ -1,0 +1,193 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CM2 SKINCHANGER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"></link>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(39 39 42);
+            font-family: 'Inter', sans-serif;
+        }
+
+        * {
+            transition: all 0.3s ease;
+        }
+
+        .card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+        }
+
+        .button-hover {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .button-hover:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+
+        .button-hover::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                rgba(255,255,255,0.1),
+                transparent
+            );
+            transition: 0.5s;
+        }
+
+        .button-hover:hover::after {
+            left: 100%;
+        }
+
+        .photo-placeholder {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .photo-placeholder::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 200%;
+            height: 100%;
+            background: linear-gradient(
+                to right,
+                transparent 0%,
+                rgba(255,255,255,0.1) 50%,
+                transparent 100%
+            );
+            animation: shimmer 2s infinite;
+        }
+
+        @keyframes shimmer {
+            to {
+                transform: translateX(100%);
+            }
+        }
+
+        .logo-hover {
+            transition: transform 0.3s ease;
+        }
+
+        .logo-hover:hover {
+            transform: scale(1.1);
+        }
+
+        .enhanced-shadow {
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+                       0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+    </style>
+</head>
+<body>
+    <header class="flex overflow-hidden flex-col items-center pb-4 bg-zinc-800">
+        <div class="flex flex-wrap gap-5 justify-between self-stretch py-5 pr-20 pl-9 w-full text-3xl text-white rounded-2xl bg-neutral-800 max-md:px-5 max-md:max-w-full enhanced-shadow fixed top-0 z-50">
+            <div class="flex gap-3.5 self-start">
+                <img loading="lazy" src="https://cdn.builder.io/api/v1/image/assets/95c578f3a6474f99b1b1649bb929726d/240aa4c46d0d58d8bf9f36c320a132e1fb9e7337621d3fa6bc8f8c798ed8521a?placeholderIfAbsent=true"
+                     class="object-contain shrink-0 aspect-[1.18] w-[59px] logo-hover cursor-pointer"
+                     alt="CM2 Skinchanger Logo" />
+                <h1 class="flex-auto my-auto font-bold">CM2 SKINCHANGER</h1>
+            </div>
+            <button class="px-6 py-1 rounded-2xl bg-neutral-700 custom-shadow button-glow hover-shadow max-md:pl-5" onclick="window.location.href='https://cdn.modrinth.com/data/PTj85Anz/versions/Ue14vJVH/myresourcepack-1.2.6%2B1.21.4.jar';">
+                Download Mod
+            </button>
+        </div>
+
+        <main class="w-full max-w-[1100px] space-y-9 mt-24 px-4">
+            <!-- First Row -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <article class="w-full">
+                    <div class="card overflow-hidden pb-3.5 mx-auto w-full rounded-2xl bg-neutral-800 enhanced-shadow">
+                        <img alt="Placeholder image for ReWork WHITE" class="w-full h-48 object-cover rounded-t-2xl" height="200" src="https://i.imgur.com/WERcB4I.png" width="300">
+                        <div class="flex gap-8 mt-3.5 mr-4 ml-5 text-3xl max-md:mx-2.5">
+                            <h2 class="grow shrink w-32 text-white font-medium">ReWork WHITE </h2>
+                            <a class="button-hover z-10 px-4 py-2 font-semibold whitespace-nowrap rounded-2xl bg-zinc-300 text-neutral-900" href="MainPack1.html">Open</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="w-full">
+                    <div class="card overflow-hidden pb-3.5 mx-auto w-full rounded-2xl bg-neutral-800 enhanced-shadow">
+                        <img alt="Placeholder image for Whitepack dizayyner" class="w-full h-48 object-cover rounded-t-2xl" height="200" src="https://i.imgur.com/JFvR5mJ.png" width="300">
+                        <div class="flex gap-8 mt-3.5 mr-4 ml-5 text-3xl max-md:mx-2.5">
+                            <h2 class="grow shrink w-32 text-white font-medium">Whitepack dizayyner</h2>
+                            <a class="button-hover z-10 px-4 py-2 font-semibold whitespace-nowrap rounded-2xl bg-zinc-300 text-neutral-900" href="MainPack2.html">Open</a>
+                        </div>
+                    </div>
+                </article>
+                <article class="w-full">
+                    <div class="card overflow-hidden pb-3.5 mx-auto w-full rounded-2xl bg-neutral-800 enhanced-shadow">
+                        <img alt="Placeholder image for XRAY v2 Hanoka983" class="w-full h-48 object-cover rounded-t-2xl" height="200" src="https://i.imgur.com/4l2FyMf.png" width="300">
+                        <div class="flex gap-8 mt-3.5 mr-4 ml-5 text-3xl max-md:mx-2.5">
+                            <h2 class="grow shrink w-32 text-white font-medium">XRAY v2 Hanoka983</h2>
+                            <a class="button-hover z-10 px-4 py-2 font-semibold whitespace-nowrap rounded-2xl bg-zinc-300 text-neutral-900" href="MainPack3.html">Open</a>
+                        </div>
+                    </div>
+                </article>
+            </section>
+
+            <!-- Second Row -->
+            <section class="grid grid-cols-1 md:grid-cols-3 gap-5">
+                <article class="w-full">
+                    <div class="card overflow-hidden pb-3.5 mx-auto w-full rounded-2xl bg-neutral-800 enhanced-shadow">
+                        <img alt="Placeholder image for XRAY v1 dizayyner" class="w-full h-48 object-cover rounded-t-2xl" height="200" src="https://i.imgur.com/FOahbYq.png" width="300">
+                        <div class="flex gap-8 mt-3.5 mr-4 ml-5 text-3xl max-md:mx-2.5">
+                            <h2 class="grow shrink w-32 text-white font-medium">XRAY v1 dizayyner</h2>
+                            <a class="button-hover z-10 px-4 py-2 font-semibold whitespace-nowrap rounded-2xl bg-zinc-300 text-neutral-900" href="MainPack4.html">Open</a>
+                        </div>
+                    </div>
+                </article>
+                
+        </main>
+
+        <footer class="flex flex-wrap gap-5 justify-between items-start mt-28 w-full text-3xl text-white max-w-[1150px] max-md:mt-10 max-md:max-w-full px-4">
+            <img loading="lazy"
+                 src="https://cdn.builder.io/api/v1/image/assets/95c578f3a6474f99b1b1649bb929726d/a8500b4ff859651fbf3258a28f2e18972c5ab05c6ab3bc1ccc953e0965a20469?placeholderIfAbsent=true"
+                 class="object-contain shrink-0 aspect-square w-[50px] max-sm:mt-2 max-sm:ml-5 logo-hover cursor-pointer"
+                 alt="Footer icon 1" />
+        </footer>
+    </header>
+
+    <script>
+        document.documentElement.style.scrollBehavior = 'smooth';
+
+        document.querySelectorAll('.button-hover').forEach(button => {
+            button.addEventListener('click', function(e) {
+                let ripple = document.createElement('div');
+                ripple.classList.add('ripple');
+                this.appendChild(ripple);
+
+                let rect = this.getBoundingClientRect();
+                let x = e.clientX - rect.left;
+                let y = e.clientY - rect.top;
+
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+
+                setTimeout(() => {
+                    ripple.remove();
+                }, 1000);
+            });
+        });
+    </script>
+</body>
+</html>

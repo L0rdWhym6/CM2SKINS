@@ -1,0 +1,288 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CM2 SKINCHANGER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'zinc': {
+                            800: '#27272a',
+                        },
+                        'neutral': {
+                            500: '#737373',
+                            700: '#404040',
+                            800: '#262626',
+                            900: '#171717',
+                        },
+                        'stone': {
+                            900: '#1c1917',
+                        },
+                        'zinc': {
+                            300: '#d4d4d8',
+                        },
+                    },
+                }
+            }
+        }
+    </script>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #27272a;
+            margin: 0;
+            padding: 0;
+            color: #ffffff;
+        }
+
+        /* Smooth scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Enhanced shadows and animations */
+        .custom-shadow {
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .hover-shadow:hover {
+            box-shadow: 0 20px 40px -5px rgba(0, 0, 0, 0.4);
+            transform: translateY(-2px);
+        }
+
+        /* Button animations */
+        .button-glow {
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* Card hover effects */
+        .card-hover {
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        .card-hover:hover {
+            transform: translateY(-5px) scale(1.01);
+        }
+
+        /* Progress bar animation */
+        .progress-bar {
+            position: relative;
+            overflow: hidden;
+        }
+
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: progress-animation 2s linear infinite;
+        }
+
+        @keyframes progress-animation {
+            0% { left: -100%; }
+            100% { left: 100%; }
+        }
+
+        /* Focus styles */
+        button:focus,
+        a:focus {
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Loading state for images */
+        .loading {
+            position: relative;
+            background: linear-gradient(90deg, #404040 25%, #4a4a4a 50%, #404040 75%);
+            background-size: 200% 100%;
+            animation: loading 1.5s infinite;
+        }
+
+        @keyframes loading {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* Dropdown menu styles */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            right: 0;
+            top: 100%;
+            z-index: 10;
+            min-width: 160px;
+            padding: 0.5rem 0;
+            margin: 0.125rem 0 0;
+            font-size: 1rem;
+            color: #ffffff;
+            text-align: left;
+            list-style: none;
+            background-color: #262626;
+            border-radius: 0.375rem;
+            box-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+
+        .dropdown-menu a {
+            display: block;
+            width: 100%;
+            padding: 0.5rem 1rem;
+            clear: both;
+            font-weight: 600;
+            color: #ffffff;
+            text-align: inherit;
+            white-space: nowrap;
+            background-color: transparent;
+            border: 0;
+            text-decoration: none;
+        }
+
+        .dropdown-menu a:hover {
+            background-color: #404040;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <header class="fixed top-0 left-0 right-0 z-50 flex flex-wrap gap-5 justify-between self-stretch py-5 pr-20 pl-9 w-full text-3xl text-white rounded-2xl bg-neutral-800 max-md:px-5 max-md:max-w-full custom-shadow">
+        <div class="flex gap-3.5 self-start cursor-pointer" onclick="window.location.href='Index.html'">
+            <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/95c578f3a6474f99b1b1649bb929726d/240aa4c46d0d58d8bf9f36c320a132e1fb9e7337621d3fa6bc8f8c798ed8521a"
+                class="object-contain shrink-0 aspect-[1.18] w-[59px] no-loading"
+                alt="CM2 Skinchanger Logo"
+            />
+            <h1 class="flex-auto my-auto">CM2 SKINCHANGER</h1>
+        </div>
+        <button class="px-6 py-1 rounded-2xl bg-neutral-700 custom-shadow button-glow hover-shadow max-md:pl-5" onclick="window.location.href='https://cdn.modrinth.com/data/PTj85Anz/versions/Ue14vJVH/myresourcepack-1.2.6%2B1.21.4.jar';">
+            Download Mod
+        </button>
+    </header>
+
+    <main class="flex overflow-hidden flex-col items-center pb-5 bg-zinc-800 min-h-screen pt-24">
+        <section class="px-16 pt-52 pb-40 mt-20 w-full text-9xl text-white whitespace-nowrap rounded-2xl bg-transparent max-w-[1010px] max-md:px-5 max-md:pt-24 max-md:pb-28 max-md:mt-10 max-md:max-w-full max-md:text-4xl">
+            <img alt="A placeholder image representing the main content" class="w-full h-full object-cover rounded-2xl custom-shadow" height="400" src="https://i.imgur.com/DusNpNW.png" width="800"/>
+        </section>
+
+        <section class="flex flex-wrap gap-5 justify-between mt-6 w-full text-white max-w-[1010px] max-md:max-w-full">
+            <h2 class="text-6xl max-md:text-4xl">Whitepack dizayyner</h2>
+            <div class="flex gap-3 my-auto text-3xl whitespace-nowrap">
+                <div class="relative dropdown">
+                    <button class="px-6 py-1 rounded-2xl bg-neutral-700 custom-shadow hover-shadow max-md:px-5">
+                        More
+                    </button>
+                    <div class="dropdown-menu">
+                        <a href="https://t.me/CounterMineSkin" target="_blank">Telegram</a>
+                        <a href="https://t.me/CounterMineSkins/253" target="_blank">Author</a>
+                        <a href="https://telegra.ph/Tutorial-po-CounterMine-SKINCHANGER-02-23" target="_blank">Tutorial</a>
+                        <a href="#" onclick="navigator.clipboard.writeText(window.location.href); alert('Link copied!');">Copy Link</a>
+                    </div>
+                </div>
+                <button class="px-8 py-1 bg-neutral-600 rounded-2xl custom-shadow hover-shadow max-md:px-5" onclick="window.location.href='https://drive.google.com/file/d/1MxPS9mKvjNrN6CPvV_iMa8pkFEvJ3WBD/view?usp=drive_link';">
+                    Download
+                </button>
+            </div>
+        </section>
+
+        <div class="flex shrink-0 mt-6 max-w-full rounded-2xl bg-stone-900 h-[19px] custom-shadow w-[1106px] progress-bar"></div>
+
+        <h2 class="mt-4 text-5xl text-white max-md:text-4xl">More posts</h2>
+
+        <section class="mt-7 w-full max-w-[1100px] max-md:max-w-full">
+            <div class="flex gap-5 max-md:flex-col">
+                <article class="w-[33%] max-md:ml-0 max-md:w-full">
+                    <div class="overflow-hidden pb-3.5 mx-auto w-full rounded-2xl bg-neutral-800 custom-shadow card-hover max-md:mt-10">
+                        <img alt="A placeholder image for the first post" class="w-full h-48 object-cover rounded-t-2xl" height="300" src="https://i.imgur.com/WERcB4I.png" width="400"/>
+                        <div class="flex gap-8 mt-3.5 mr-4 ml-5 text-3xl max-md:mx-2.5">
+                            <h3 class="grow shrink w-32 text-white">ReWork WHITE</h3>
+                            <button onclick="window.location.href='MainPack1.html'" class="z-10 px-4 my-auto font-semibold whitespace-nowrap rounded-2xl bg-zinc-300 custom-shadow button-glow text-neutral-900">
+                                Open
+                            </button>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                    <div class="flex flex-col grow max-md:mt-10">
+                        <div class="overflow-hidden pb-3.5 w-full rounded-2xl bg-neutral-800 custom-shadow card-hover">
+                            <img alt="A placeholder image for the second post" class="w-full h-48 object-cover rounded-t-2xl" height="300" src="https://i.imgur.com/JFvR5mJ.png" width="400"/>
+                            <div class="flex gap-8 mt-3.5 mr-4 ml-5 text-3xl max-md:mx-2.5">
+                                <h3 class="grow shrink w-32 text-white">Whitepack dizayyner</h3>
+                                <button onclick="window.location.href='MainPack2.html'" class="z-10 px-4 my-auto font-semibold whitespace-nowrap rounded-2xl bg-zinc-300 custom-shadow button-glow text-neutral-900">
+                                    Open
+                                </button>
+                            </div>
+                        </div>
+                        <button class="self-center mt-6 ml-4 text-3xl text-white transition-transform duration-300 hover:translate-x-2">
+                            Next ->
+                        </button>
+                    </div>
+                </article>
+
+                <article class="ml-5 w-[33%] max-md:ml-0 max-md:w-full">
+                    <div class="overflow-hidden pb-3.5 mx-auto w-full rounded-2xl bg-neutral-800 custom-shadow card-hover max-md:mt-10">
+                        <img alt="A placeholder image for the third post" class="w-full h-48 object-cover rounded-t-2xl" height="300" src="https://i.imgur.com/4l2FyMf.png" width="400"/>
+                        <div class="flex gap-8 mt-3.5 mr-4 ml-5 text-3xl max-md:mx-2.5">
+                            <h3 class="grow shrink w-32 text-white">XRAY v2 Hanoka983</h3>
+                            <button onclick="window.location.href='MainPack3.html'" class="z-10 px-4 my-auto font-semibold whitespace-nowrap rounded-2xl bg-zinc-300 custom-shadow button-glow text-neutral-900">
+                                Open
+                            </button>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </section>
+
+        <footer class="flex flex-wrap gap-5 justify-between mt-32 w-full max-w-6xl max-md:mt-10 max-md:max-w-full">
+            <img
+                loading="lazy"
+                src="https://cdn.builder.io/api/v1/image/assets/95c578f3a6474f99b1b1649bb929726d/a8500b4ff859651fbf3258a28f2e18972c5ab05c6ab3bc1ccc953e0965a20469"
+                class="object-contain shrink-0 aspect-square w-[50px] no-loading"
+                alt="Footer logo 1"
+            />
+        </footer>
+    </main>
+
+    <script>
+        // Add loading state to images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img:not(.no-loading)');
+            images.forEach(img => {
+                img.classList.add('loading');
+                img.onload = function() {
+                    this.classList.remove('loading');
+                }
+
+            });
+        });
+
+        // Smooth scroll for navigation
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
